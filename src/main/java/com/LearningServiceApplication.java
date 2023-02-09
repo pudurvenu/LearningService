@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import com.entity.UserRole;
 import com.model.User;
 import com.repository.UserRepository;
-
+import com.dto.UserDTO;
 import jakarta.annotation.PostConstruct;
 
 
@@ -23,10 +23,14 @@ public class LearningServiceApplication {
 	@Autowired
 	public UserRepository repository;
 	
+	@Autowired
+	private AccountServiceImpl accountService;
+	
 	@PostConstruct
 	public void start() {
-		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-		repository.save(new User(1,"a","b", "c", "venugopalpudur1@gmail.com", bcrypt.encode("12345"), null, false, false));
+		UserDTO user = new UserDTO("a","b", "c", "venugopalpudur1@gmail.com", "7720", "12345");
+		accountService..signUp(user);
+		//repository.save(new User(" bcrypt.encode("12345"), null, false, false));
 		
 	}
 	public static void main(String[] args) {
