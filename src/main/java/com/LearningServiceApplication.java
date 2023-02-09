@@ -33,7 +33,7 @@ public class LearningServiceApplication {
 		SpringApplication.run(LearningServiceApplication.class, args);
 	}
 	
-	@PostConstruct
+	/*@PostConstruct
 	public void init() {
 		Roles role = new Roles();
 		role.setUserRole(UserRole.ADMIN);
@@ -42,6 +42,6 @@ public class LearningServiceApplication {
 		accountService.signUp(user);
 		//repository.save(new User(" bcrypt.encode("12345"), null, false, false));
 		
-	}
+	}*/
 
 }
