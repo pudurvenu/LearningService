@@ -2,9 +2,7 @@ spring:
   application:
     name: REGISTRATION-SERVICE
     
-  config:
-    import: optional:configserver:http://localhost:8086
-     
+   
    
   mail:
     host: smtp.gmail.com
