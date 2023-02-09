@@ -11,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import com.entity.UserRole;
 import com.model.User;
 import com.repository.UserRepository;
+import com.service.impls.AccountServiceImpl;
 import com.dto.UserDTO;
 import jakarta.annotation.PostConstruct;
 
