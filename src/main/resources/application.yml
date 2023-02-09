@@ -2,7 +2,8 @@ spring:
   application:
     name: REGISTRATION-SERVICE
     
-   
+  config:
+    import: optional:configserver:https://configserver-production.up.railway.app
    
   mail:
     host: smtp.gmail.com
