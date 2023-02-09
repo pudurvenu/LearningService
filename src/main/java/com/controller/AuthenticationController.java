@@ -80,7 +80,7 @@ public class AuthenticationController {
 		return authresp;
 	}
 	
-	@CircuitBreaker(name = "EMAIL-SERVICE", fallbackMethod = "sendAvailableMail")
+	//@CircuitBreaker(name = "EMAIL-SERVICE", fallbackMethod = "sendAvailableMail")
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@RequestBody UserDTO userDTO){
 		
@@ -90,9 +90,9 @@ public class AuthenticationController {
 		return funcs.generateResponse(null, null, HttpStatus.OK, "Registration successfull.");
 	}
 	
-	public ResponseEntity<?> sendAvailableMail(UserDTO userDTO, Exception e) {
+	/*public ResponseEntity<?> sendAvailableMail(UserDTO userDTO, Exception e) {
 		return funcs.generateErrorResponse("Server Error", HttpStatus.SERVICE_UNAVAILABLE, "Server Unavailable at the moment, Please try again later.");
-	}
+	}*/
 		
 	@GetMapping("/register/confirm")
 	public ResponseEntity<?> confirm(@RequestParam("token") String token){
