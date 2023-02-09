@@ -14,6 +14,8 @@ import com.repository.UserRepository;
 import com.service.impls.AccountServiceImpl;
 import com.dto.UserDTO;
 import jakarta.annotation.PostConstruct;
+import java.util.*;
+import com.model.Roles;
 
 
 @SpringBootApplication//(exclude = {SecurityAutoConfiguration.class, ManagementWebSecurityAutoConfiguration.class})
@@ -29,7 +31,10 @@ public class LearningServiceApplication {
 	
 	@PostConstruct
 	public void start() {
-		UserDTO user = new UserDTO("a","b", "c", "venugopalpudur1@gmail.com", "7720", "12345");
+		Roles role = new Roles();
+		role.setUserRole(UserRole.ADMIN);
+		role.setDescription("Student role allows to access premium courses");
+		UserDTO user = new UserDTO("a","b", "c", "venugopalpudur1@gmail.com", "7720", "12345", Arrays.asList(role));
 		accountService.signUp(user);
 		//repository.save(new User(" bcrypt.encode("12345"), null, false, false));
 		
