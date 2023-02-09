@@ -23,12 +23,10 @@ public class LearningServiceApplication {
 	@Autowired
 	public UserRepository repository;
 	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
 	@PostConstruct
 	public void start() {
-		repository.save(new User(1,"a","b", "c", "venugopalpudur1@gmail.com", bCryptPasswordEncoder.encode("12345"), null, false, false));
+		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder()
+		repository.save(new User(1,"a","b", "c", "venugopalpudur1@gmail.com", bcrypt.encode("12345"), null, false, false));
 		
 	}
 	public static void main(String[] args) {
