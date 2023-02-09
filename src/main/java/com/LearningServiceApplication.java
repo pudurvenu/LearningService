@@ -29,8 +29,12 @@ public class LearningServiceApplication {
 	@Autowired
 	private AccountServiceImpl accountService;
 	
+	public static void main(String[] args) {
+		SpringApplication.run(LearningServiceApplication.class, args);
+	}
+	
 	@PostConstruct
-	public void start() {
+	public void init() {
 		Roles role = new Roles();
 		role.setUserRole(UserRole.ADMIN);
 		role.setDescription("Student role allows to access premium courses");
@@ -38,9 +42,6 @@ public class LearningServiceApplication {
 		accountService.signUp(user);
 		//repository.save(new User(" bcrypt.encode("12345"), null, false, false));
 		
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(LearningServiceApplication.class, args);
 	}
 
 }
