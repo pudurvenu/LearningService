@@ -20,14 +20,17 @@ import jakarta.annotation.PostConstruct;
 @EnableFeignClients(basePackages = {"com.feignclient"})
 public class LearningServiceApplication {
 	
-	/*@Autowired
+	@Autowired
 	public UserRepository repository;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@PostConstruct
 	public void start() {
-		repository.save(new User(1,"a","b", "c", "pudur.venu@gmail.com", "12345", UserRole.USER, false, false));
+		repository.save(new User(1,"a","b", "c", "venugopalpudur1@gmail.com", bCryptPasswordEncoder.encode("12345"), null, false, false));
 		
-	}*/
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(LearningServiceApplication.class, args);
 	}
