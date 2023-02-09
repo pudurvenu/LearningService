@@ -25,7 +25,7 @@ public class LearningServiceApplication {
 	
 	@PostConstruct
 	public void start() {
-		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder()
+		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
 		repository.save(new User(1,"a","b", "c", "venugopalpudur1@gmail.com", bcrypt.encode("12345"), null, false, false));
 		
 	}
