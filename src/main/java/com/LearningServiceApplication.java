@@ -29,7 +29,7 @@ public class LearningServiceApplication {
 	@PostConstruct
 	public void start() {
 		UserDTO user = new UserDTO("a","b", "c", "venugopalpudur1@gmail.com", "7720", "12345");
-		accountService..signUp(user);
+		accountService.signUp(user);
 		//repository.save(new User(" bcrypt.encode("12345"), null, false, false));
 		
 	}
